@@ -14,7 +14,20 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cms-telesto/api": ["libs/api/src/index.ts"],
+      "@cms-telesto/api/server": ["libs/api/src/server.ts"],
+      "@cms-telesto/common": ["libs/common/src/index.ts"],
+      "@cms-telesto/common/server": ["libs/common/src/server.ts"],
+      "@cms-telesto/core": ["libs/core/src/index.ts"],
+      "@cms-telesto/core/server": ["libs/core/src/server.ts"],
+      "@cms-telesto/modules/admin": ["libs/modules/admin/src/index.ts"],
+      "@cms-telesto/modules/admin/server": ["libs/modules/admin/src/server.ts"],
+      "@cms-telesto/modules/web": ["libs/modules/web/src/index.ts"],
+      "@cms-telesto/modules/web/server": ["libs/modules/web/src/server.ts"],
+      "@cms-telesto/ui": ["libs/ui/src/index.ts"],
+      "@cms-telesto/ui/server": ["libs/ui/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

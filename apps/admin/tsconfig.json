@@ -24,9 +24,10 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "../../apps/cms-telesto/.next/types/**/*.ts",
-    "../../dist/apps/cms-telesto/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "../../apps/admin/.next/types/**/*.ts",
+    "../../dist/apps/admin/.next/types/**/*.ts",
+    "next-env.d.ts",
+    "../../dist/admin/.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
