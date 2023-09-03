@@ -4,11 +4,11 @@ import {
   counterDecrement,
   counterIncrementByAmount,
 } from './counter';
-import { AdminStateProps, AppDispatchProps } from '../types';
+import { AdminStateProps, AdminDispatchProps } from '../types';
 
 export const useCounterSlice = () => {
   const counter = useSelector((state: AdminStateProps) => state.counter);
-  const dispatch: AppDispatchProps = useDispatch();
+  const dispatch: AdminDispatchProps = useDispatch();
 
   return {
     counter,

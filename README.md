@@ -8,31 +8,33 @@
 
 ### Development
 
-- `% npm run start:web` - Runs only web development on localhost:4200
-- `% npm run start:admin` - Runs only admin development on localhost:4300
-- `% npm run start:all` - Runs all i one terminal window
-- `% npm run start:all:stmux` - Runs all i one terminal window with stmux
+- `% yarn start:web` - Runs only web development on localhost:4200
+- `% yarn start:admin` - Runs only admin development on localhost:4300
+- `% yarn start:all` - Runs all i one terminal window
+- `% yarn start:all:stmux` - Runs all i one terminal window with stmux. If it's installed on your machine
 
 ### Build
 
-- `% npm run build:web` - Builds web package
-- `% npm run build:admin` - Builds admin package
-- `% npm run build:all` - Build both packages
+- `% yarn build:web` - Builds web package
+- `% yarn build:admin` - Builds admin package
+- `% yarn build:all` - Build both packages
+- `% yarn build:all:prod` - Build both packages in production mode
 
 ### Formatting and linter
 
-- `% npm run lint` - Check code by linter
-- `% npm run format:check` - Check code syntax
-- `% npm run format:fix` - Fix code syntax
+- `% yarn lint` - Check code by linter
+- `% yarn nx:lint` - Check code by linter with NX 
+- `% yarn format:check` - Check code syntax
+- `% yarn format:fix` - Fix code syntax
 
 ## Dependencies
 
+* Yarn
 * NX.js
 * Next.js
 * React
 * i18next + nextI18next
-* Emotion CSS
-* MUI
+* Emotion CSS + MUI
 * Jest + Cypress
 
 ## NX Caching

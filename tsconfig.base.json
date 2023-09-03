@@ -20,8 +20,8 @@
       "@/core": ["libs/core/src/index.ts"],
       "@/modules/admin": ["libs/modules/admin/src/index.ts"],
       "@/modules/web": ["libs/modules/web/src/index.ts"],
-      "@/ui": ["libs/ui/src/index.ts"],
       "@/store": ["libs/store/src/index.ts"],
+      "@/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
