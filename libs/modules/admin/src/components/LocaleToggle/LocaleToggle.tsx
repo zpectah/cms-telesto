@@ -12,6 +12,7 @@ const LocaleToggle = () => {
     <>
       {ADMIN_CFG.locales.map((item) => (
         <Button
+          key={item}
           onClick={() => replace(pathname, '', { locale: item })}
           disabled={item === locale}
         >

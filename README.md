@@ -8,25 +8,32 @@
 
 ### Development
 
-- `% npm run start:web`
-- `% npm run start:admin`
-- `% npm run start:all`
+- `% npm run start:web` - Runs only web development on localhost:4200
+- `% npm run start:admin` - Runs only admin development on localhost:4300
+- `% npm run start:all` - Runs all i one terminal window
+- `% npm run start:all:stmux` - Runs all i one terminal window with stmux
 
 ### Build
 
-- `% npm run build:web`
-- `% npm run build:admin`
-- `% npm run build:all`
+- `% npm run build:web` - Builds web package
+- `% npm run build:admin` - Builds admin package
+- `% npm run build:all` - Build both packages
 
 ### Formatting and linter
 
-- `% npm run lint`
-- `% npm run format:check`
-- `% npm run format:fix`
+- `% npm run lint` - Check code by linter
+- `% npm run format:check` - Check code syntax
+- `% npm run format:fix` - Fix code syntax
 
 ## Dependencies
 
-... todo
+* NX.js
+* Next.js
+* React
+* i18next + nextI18next
+* Emotion CSS
+* MUI
+* Jest + Cypress
 
 ## NX Caching
 

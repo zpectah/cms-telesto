@@ -3,6 +3,9 @@
   "affected": {
     "defaultBase": "master"
   },
+  "cli": {
+    "packageManager": "yarn"
+  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx-cloud",
