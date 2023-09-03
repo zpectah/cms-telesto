@@ -3,6 +3,7 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
 import { useCounterSlice } from '@/store';
+import { useTheme } from '@/core';
 import { LocaleToggle } from '../../components';
 import { ViewLayout } from '../../layout';
 
@@ -10,6 +11,9 @@ const Dashboard = () => {
   const { t } = useTranslation();
   const { counter, increment, decrement, incrementByAmount } =
     useCounterSlice();
+  const theme = useTheme();
+
+  console.log('theme', theme);
 
   return (
     <ViewLayout pageKey="dashboard" sidebar={<>sidebar ?</>}>

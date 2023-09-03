@@ -8,6 +8,13 @@ import { Button } from '@/ui';
 const LocaleToggle = () => {
   const { locale, replace, pathname } = useRouter();
 
+  // const [value, setValue] = useLocalStorage('username', '');
+  // const n = localStorage?.getItem('username');
+  // console.log('n', value);
+  // useEffect(() => {
+  //   setValue('Šulin');
+  // }, []);
+
   return (
     <>
       {ADMIN_CFG.locales.map((item) => (

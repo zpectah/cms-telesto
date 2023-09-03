@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
-import CssBaseline from '@mui/material/CssBaseline';
 import { webStore } from '@/store';
-import { ReduxProvider } from '@/common';
+import { webTheme } from '@/modules/web';
+import { ReduxProvider, ThemeProvider, CssBase } from '@/common';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -16,8 +16,10 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <CssBaseline />
-      <Component {...pageProps} />
+      <CssBase />
+      <ThemeProvider theme={webTheme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </ReduxProvider>
   );
 }
