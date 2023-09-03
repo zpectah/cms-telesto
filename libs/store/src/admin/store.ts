@@ -1,16 +1,13 @@
 'use client';
 
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import counterReducer from './slices/counterSlice';
+import counterReducer from './slices/counter';
 
-export type AdminStateProps = ReturnType<typeof store.getState>;
-export type AppDispatchProps = typeof store.dispatch;
-
-const rootReducer = combineReducers({
+const adminRootReducer = combineReducers({
   counter: counterReducer,
-  //add all your reducers here
+  // another reducer here
 });
 
-export const store = configureStore({
-  reducer: rootReducer,
+export const adminStore = configureStore({
+  reducer: adminRootReducer,
 });

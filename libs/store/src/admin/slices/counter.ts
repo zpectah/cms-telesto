@@ -10,7 +10,7 @@ const initialState: SliceStoreProps = {
   value: 0,
 };
 
-export const counterSlice = createSlice({
+export const adminCounterSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
@@ -20,13 +20,13 @@ export const counterSlice = createSlice({
     counterDecrement: (state) => {
       state.value -= 1;
     },
-    counterIncrementByAmount: (state, action) => {
+    counterIncrementByAmount: (state, action: { payload: number }) => {
       state.value += action.payload;
     },
   },
 });
 
 export const { counterIncrement, counterDecrement, counterIncrementByAmount } =
-  counterSlice.actions;
+  adminCounterSlice.actions;
 
-export default counterSlice.reducer;
+export default adminCounterSlice.reducer;

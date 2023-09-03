@@ -3,21 +3,12 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
 import { LocaleToggle } from '../../components';
-
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  counterIncrement,
-  counterDecrement,
-  AdminStateProps,
-  AppDispatchProps,
-} from '@/store';
+import { useCounterSlice } from '@/store';
 
 const Dashboard = () => {
   const { t } = useTranslation();
-
-  // Redux handling
-  const { value } = useSelector((state: AdminStateProps) => state.counter);
-  const dispatch: AppDispatchProps = useDispatch();
+  const { counter, increment, decrement, incrementByAmount } =
+    useCounterSlice();
 
   return (
     <>
@@ -26,9 +17,10 @@ const Dashboard = () => {
       <LocaleToggle />
       <br />
       <div>
-        <h1>Counter: {value}</h1>
-        <button onClick={() => dispatch(counterIncrement())}>Increment</button>
-        <button onClick={() => dispatch(counterDecrement())}>Decrement</button>
+        <h1>Counter: {counter.value}</h1>
+        <button onClick={() => increment()}>Increment</button>
+        <button onClick={() => decrement()}>Decrement</button>
+        <button onClick={() => incrementByAmount(23)}>Add 23 to value</button>
       </div>
     </>
   );
