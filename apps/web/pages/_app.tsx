@@ -4,12 +4,12 @@ import { appWithTranslation } from 'next-i18next';
 import { webStore } from '@/store';
 import { webTheme } from '@/modules/web';
 import {
+  ColorModeContextProvider,
+  CssBase,
   ReduxProvider,
   ThemeProvider,
-  CssBase,
-  ColorModeContextProvider,
-} from '@/common';
-import { useThemeMode } from '@/core';
+  useThemeMode,
+} from '@/core';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';

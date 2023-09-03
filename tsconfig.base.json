@@ -16,7 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@/api": ["libs/api/src/index.ts"],
-      "@/common": ["libs/common/src/index.ts"],
       "@/core": ["libs/core/src/index.ts"],
       "@/modules/admin": ["libs/modules/admin/src/index.ts"],
       "@/modules/web": ["libs/modules/web/src/index.ts"],

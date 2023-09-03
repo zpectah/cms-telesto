@@ -3,10 +3,9 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'next-i18next';
 import { useCounterSlice } from '@/store';
-import { useTheme } from '@/core';
+import { useTheme, ColorModeContext } from '@/core';
 import { LocaleToggle } from '../../components';
 import { ViewLayout } from '../../layout';
-import { ColorModeContext } from '@/common';
 
 const Dashboard = () => {
   const { t } = useTranslation();

@@ -1,1 +1,2 @@
-export const fooBar = 'barBaz';
+export { default as CssBase } from './CssBase';
+export type { CssBaseProps } from './CssBase';
