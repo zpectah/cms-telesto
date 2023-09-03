@@ -1,9 +1,9 @@
 import React from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Error } from '@/modules/admin';
+import { Login } from '@/modules/admin';
 
 export default function Page() {
-  return <Error errorKey={404} />;
+  return <Login />;
 }
 
 export async function getStaticProps({ locale }: { locale: string }) {

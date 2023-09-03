@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { useTranslation } from 'next-i18next';
-import { LocaleToggle } from '../../components';
 import { useCounterSlice } from '@/store';
+import { LocaleToggle } from '../../components';
+import { ViewLayout } from '../../layout';
 
 const Dashboard = () => {
   const { t } = useTranslation();
@@ -11,10 +12,12 @@ const Dashboard = () => {
     useCounterSlice();
 
   return (
-    <>
+    <ViewLayout pageKey="dashboard" sidebar={<>sidebar ?</>}>
       Dashboard View ... {t('test_title')}
       <br />
+      <br />
       <LocaleToggle />
+      <br />
       <br />
       <div>
         <h1>Counter: {counter.value}</h1>
@@ -22,7 +25,7 @@ const Dashboard = () => {
         <button onClick={() => decrement()}>Decrement</button>
         <button onClick={() => incrementByAmount(23)}>Add 23 to value</button>
       </div>
-    </>
+    </ViewLayout>
   );
 };
 
