@@ -15,15 +15,21 @@ const LocaleToggle = () => {
   //   setValue('Šulin');
   // }, []);
 
+  const localeToggle = (loc: string) => {
+    replace(pathname, '', { locale: loc }).then(() => {
+      console.log('Set to local storage here ...', loc);
+    });
+  };
+
   return (
     <>
-      {ADMIN_CFG.locales.map((item) => (
+      {ADMIN_CFG.LOCALES.LIST.map((loc) => (
         <Button
-          key={item}
-          onClick={() => replace(pathname, '', { locale: item })}
-          disabled={item === locale}
+          key={loc}
+          onClick={() => localeToggle(loc)}
+          disabled={loc === locale}
         >
-          {item}
+          {loc}
         </Button>
       ))}
     </>

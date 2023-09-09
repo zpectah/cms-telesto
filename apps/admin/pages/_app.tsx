@@ -26,7 +26,7 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <ColorModeContextProvider value={colorMode}>
         <ThemeProvider theme={theme}>
-          <CssBase />
+          <CssBase enableColorScheme />
           <Component {...pageProps} />
         </ThemeProvider>
       </ColorModeContextProvider>

@@ -1,13 +1,20 @@
 'use client';
 
 import React from 'react';
-import { ViewLayout } from '../../layout';
+import { PageLayout } from '../../layout';
+import { Container } from '../../layout';
+import { useFooter } from '../../layout';
 
 const Login = () => {
+  const { primary } = useFooter();
+
   return (
-    <ViewLayout pageKey="login" withoutHeader>
-      Login module View
-    </ViewLayout>
+    <PageLayout pageKey="login" variant="centered" withoutHeader withoutFooter>
+      <Container containerProps={{ maxWidth: 'sm' }}>
+        <div>Login module View</div>
+        <footer>{primary}</footer>
+      </Container>
+    </PageLayout>
   );
 };
 
