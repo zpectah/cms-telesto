@@ -1,1 +1,1 @@
-export const utilWhatEver = () => '';
+export * from './localStorage';

@@ -1,15 +1,23 @@
-import { useState, useMemo } from 'react';
-import { createTheme } from '@mui/material';
-import { Theme } from '@mui/material';
+import { useState, useMemo, useEffect } from 'react';
+import { createTheme, Theme } from '@mui/material';
+import { getLocalStorageValue, setLocalStorageValue } from '../utils';
 
-export const useThemeMode = (themeInitial: Theme) => {
+export const useThemeMode = (themeInitial: Theme, key: string) => {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
+
   const colorMode = useMemo(
     () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      toggle: () => {
+        setMode((prevMode) => {
+          const value = prevMode === 'light' ? 'dark' : 'light';
+          setLocalStorageValue(key, value);
+
+          return value;
+        });
       },
     }),
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 
@@ -22,6 +30,9 @@ export const useThemeMode = (themeInitial: Theme) => {
       }),
     [mode, themeInitial]
   );
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => setMode(getLocalStorageValue(key) || 'light'), []);
 
   return { colorMode, theme };
 };

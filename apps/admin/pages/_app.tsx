@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
@@ -11,7 +10,12 @@ import {
   ReduxProvider,
   ThemeProvider,
   useThemeMode,
+  useLayout,
 } from '@/core';
+import {
+  LOCAL_STORAGE_SIDEBAR_KEY,
+  LOCAL_STORAGE_THEME_KEY,
+} from '@/modules/admin';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -19,24 +23,29 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 function App({ Component, pageProps }: AppProps) {
-  const { colorMode, theme } = useThemeMode(adminTheme);
+  const { colorMode, theme } = useThemeMode(
+    adminTheme,
+    LOCAL_STORAGE_THEME_KEY
+  );
+  const { sidebar } = useLayout(LOCAL_STORAGE_SIDEBAR_KEY);
 
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const sidebarToggle = () => setSidebarOpen(!sidebarOpen);
+  const themeContext = {
+    theme: theme.palette.mode,
+    toggle: colorMode.toggle,
+  };
+  const layoutContext = {
+    open: sidebar.open,
+    toggle: sidebar.toggle,
+  };
 
   return (
     <ReduxProvider store={adminStore}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <ColorModeContextProvider
-        value={{ theme: theme.palette.mode, toggle: colorMode.toggleColorMode }}
-      >
+      <ColorModeContextProvider value={themeContext}>
         <ThemeProvider theme={theme}>
-          <LayoutContextProvider
-            value={{ open: sidebarOpen, toggle: sidebarToggle }}
-          >
+          <LayoutContextProvider value={layoutContext}>
             <CssBase enableColorScheme />
             <Component {...pageProps} />
           </LayoutContextProvider>
