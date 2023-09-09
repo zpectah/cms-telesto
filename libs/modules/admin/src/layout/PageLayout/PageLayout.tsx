@@ -1,7 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { styled } from '@mui/material';
-import { ADMIN_CFG } from '@/core';
+import { ADMIN_CFG } from '../../config';
 import { Header } from '../Header';
+import { PageLayoutProps } from './types';
 
 const StyledWrapper = styled('div')`
   width: 100%;
@@ -28,13 +29,6 @@ const HeaderOffset = styled('div')`
   width: 100%;
   height: ${ADMIN_CFG.STYLE.HEADER_HEIGHT_DESKTOP};
 `;
-
-export interface PageLayoutProps {
-  children: ReactNode;
-  pageKey: string;
-  variant?: 'default' | 'centered';
-  withoutHeader?: boolean;
-}
 
 const PageLayout = (props: PageLayoutProps) => {
   const { children, variant = 'default', withoutHeader } = props;

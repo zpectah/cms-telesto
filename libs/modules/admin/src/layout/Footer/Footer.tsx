@@ -1,12 +1,9 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { styled } from '@mui/material';
 import { useFooter } from './useFooter';
+import { FooterProps } from './types';
 
 const StyledFooter = styled('footer')``;
-
-export interface FooterProps {
-  children?: ReactNode;
-}
 
 const Footer = (props: FooterProps) => {
   const { children } = props;

@@ -1,5 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document';
-import { ADMIN_CFG } from '@/core';
+import { ADMIN_CFG } from '@/modules/admin';
 
 export default function Document() {
   return (

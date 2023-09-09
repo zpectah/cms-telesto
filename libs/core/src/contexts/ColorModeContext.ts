@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { ADMIN_CFG } from '../config';
+// import { ADMIN_CFG } from '../config';
 
 export type ColorModeType = 'light' | 'dark';
 
@@ -9,7 +9,8 @@ export interface ColorModeContextProps {
 }
 
 const defaultValue: ColorModeContextProps = {
-  theme: ADMIN_CFG.CONTEXT.DEFAULT.THEME as ColorModeType,
+  // theme: ADMIN_CFG.CONTEXT.DEFAULT.THEME as ColorModeType,
+  theme: 'light', // TODO
   toggle: () => null,
 };
 

@@ -1,6 +1,4 @@
-export interface UseFooterReturn {
-  primary: string;
-}
+import { UseFooterReturn } from './types';
 
 export const useFooter = (): UseFooterReturn => {
   return {

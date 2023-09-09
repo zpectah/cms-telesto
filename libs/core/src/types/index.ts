@@ -1,1 +1,1 @@
-export type FooBar = string;
+export * from './WithChildren';

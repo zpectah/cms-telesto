@@ -1,13 +1,6 @@
-import React, { ReactNode } from 'react';
-import {
-  Container as MuiContainer,
-  ContainerProps as MuiContainerProps,
-} from '@mui/material';
-
-export interface ContainerProps {
-  children: ReactNode;
-  containerProps?: Partial<MuiContainerProps>;
-}
+import React from 'react';
+import { Container as MuiContainer } from '@mui/material';
+import { ContainerProps } from './types';
 
 const Container = (props: ContainerProps) => {
   const { children, containerProps } = props;

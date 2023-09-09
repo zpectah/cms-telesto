@@ -1,8 +1,9 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { styled } from '@mui/material';
-import { ADMIN_CFG } from '@/core';
+import { ADMIN_CFG } from '../../config';
 import { Container } from '../Container';
 import { useLayoutContext } from '@/core';
+import { HeaderProps } from './types';
 
 const StyledHeader = styled('header')`
   width: 100%;
@@ -13,10 +14,6 @@ const StyledHeader = styled('header')`
   z-index: 250;
   background-color: #ababab;
 `;
-
-export interface HeaderProps {
-  children?: ReactNode;
-}
 
 const Header = (props: HeaderProps) => {
   const { children } = props;

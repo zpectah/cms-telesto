@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { useCounterSlice } from '@/store';
 import { useColorModeContext } from '@/core';
@@ -38,6 +39,10 @@ const Dashboard = () => {
         </div>
         <div>
           <p>
+            <Link href="/settings">go to settings page</Link>
+            <Link href="/login">go to login page</Link>
+            <br />
+            <br />
             Etiam sit amet, nunc iaculis molestie curabitur nullam tristique id
             dolor, erat id nec ipsum vestibulum. Eget sit amet, nulla a volutpat
             elit dui molestie accumsan sed, mattis proin purus consequat. Sit

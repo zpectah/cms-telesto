@@ -1,8 +1,5 @@
-import React, { ReactNode } from 'react';
-
-export interface SidebarProps {
-  children?: ReactNode;
-}
+import React from 'react';
+import { SidebarProps } from './types';
 
 const Sidebar = (props: SidebarProps) => {
   const { children } = props;

@@ -1,15 +1,10 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { styled, Drawer } from '@mui/material';
-import { ADMIN_CFG } from '@/core';
+import { ADMIN_CFG } from '../../config';
 import { Container } from '../Container';
 import { Footer } from '../Footer';
 import { useLayoutContext } from '@/core';
-
-export interface ViewLayoutProps {
-  children: ReactNode;
-  sidebar?: ReactNode;
-  withoutFooter?: boolean;
-}
+import { ViewLayoutProps } from './types';
 
 const StyledContent = styled('div', {
   shouldForwardProp: (prop) => prop !== 'open',

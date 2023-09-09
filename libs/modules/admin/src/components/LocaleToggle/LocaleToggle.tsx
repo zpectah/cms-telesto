@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/router';
-import { ADMIN_CFG } from '@/core';
+import { ADMIN_CFG } from '../../config';
 import { Button } from '@/ui';
 
 const LocaleToggle = () => {
