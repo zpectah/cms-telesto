@@ -2,7 +2,6 @@ import React, { ReactNode } from 'react';
 import { styled } from '@mui/material';
 import { ADMIN_CFG } from '@/core';
 import { Header } from '../Header';
-import { Footer } from '../Footer';
 
 const StyledWrapper = styled('div')`
   width: 100%;
@@ -35,11 +34,10 @@ export interface PageLayoutProps {
   pageKey: string;
   variant?: 'default' | 'centered';
   withoutHeader?: boolean;
-  withoutFooter?: boolean;
 }
 
 const PageLayout = (props: PageLayoutProps) => {
-  const { children, variant = 'default', withoutHeader, withoutFooter } = props;
+  const { children, variant = 'default', withoutHeader } = props;
 
   return (
     <StyledWrapper
@@ -49,7 +47,6 @@ const PageLayout = (props: PageLayoutProps) => {
       <StyledContent centered={variant === 'centered'}>
         {!withoutHeader && <HeaderOffset />}
         {children}
-        {!withoutFooter && <Footer />}
       </StyledContent>
     </StyledWrapper>
   );

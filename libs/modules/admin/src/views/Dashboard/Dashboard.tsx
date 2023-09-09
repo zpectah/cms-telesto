@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useContext } from 'react';
+import React from 'react';
 import { useTranslation } from 'next-i18next';
 import { useCounterSlice } from '@/store';
-import { useTheme, ColorModeContext } from '@/core';
+import { useColorModeContext } from '@/core';
 import { LocaleToggle } from '../../components';
 import { PageLayout, ViewLayout } from '../../layout';
 
@@ -11,11 +11,8 @@ const Dashboard = () => {
   const { t } = useTranslation();
   const { counter, increment, decrement, incrementByAmount } =
     useCounterSlice();
-  const theme = useTheme();
 
-  const colorMode = useContext(ColorModeContext);
-
-  // console.log('theme', theme);
+  const cmc = useColorModeContext();
 
   return (
     <PageLayout pageKey="dashboard">
@@ -36,9 +33,7 @@ const Dashboard = () => {
             </button>
           </div>
           <div>
-            <button onClick={() => colorMode.toggleColorMode()}>
-              theme {theme.palette.mode}
-            </button>
+            <button onClick={() => cmc.toggle()}>theme {cmc.theme}</button>
           </div>
         </div>
         <div>

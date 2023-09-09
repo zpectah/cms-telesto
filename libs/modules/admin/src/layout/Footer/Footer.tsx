@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import { styled } from '@mui/material';
-import { Container } from '../Container';
 import { useFooter } from './useFooter';
 
 const StyledFooter = styled('footer')``;
@@ -16,9 +15,7 @@ const Footer = (props: FooterProps) => {
 
   return (
     <StyledFooter>
-      <Container>
-        {primary}...{children}
-      </Container>
+      {primary}...{children}
     </StyledFooter>
   );
 };

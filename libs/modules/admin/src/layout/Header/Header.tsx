@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { styled } from '@mui/material';
 import { ADMIN_CFG } from '@/core';
 import { Container } from '../Container';
+import { useLayoutContext } from '@/core';
 
 const StyledHeader = styled('header')`
   width: 100%;
@@ -20,9 +21,16 @@ export interface HeaderProps {
 const Header = (props: HeaderProps) => {
   const { children } = props;
 
+  const { open, toggle } = useLayoutContext();
+
   return (
     <StyledHeader>
-      <Container>...{children}</Container>
+      <Container>
+        <button onClick={() => toggle()}>
+          menu toggle ... {open ? 'open' : 'closed'}
+        </button>
+        ...{children}
+      </Container>
     </StyledHeader>
   );
 };
