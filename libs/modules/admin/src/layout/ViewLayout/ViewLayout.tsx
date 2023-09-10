@@ -1,9 +1,9 @@
 import React from 'react';
+import { useLayoutContext } from '../../context';
+import { ViewLayoutProps } from './types';
 import { Container } from '../Container';
 import { Footer } from '../Footer';
 import { Sidebar } from '../Sidebar';
-import { useLayoutContext } from '../../context';
-import { ViewLayoutProps } from './types';
 import { Wrapper } from '../Wrapper';
 import { Content } from '../Content';
 

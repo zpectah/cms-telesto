@@ -28,11 +28,11 @@ const StyledInner = styled('div', {
 }));
 
 const Scrollable = (props: ScrollableProps) => {
-  const { children, variant = 'vertical' } = props;
+  const { children, variant = 'vertical', style } = props;
 
   return (
     <StyledOuter>
-      <StyledInner horizontal={variant === 'horizontal'}>
+      <StyledInner horizontal={variant === 'horizontal'} style={style}>
         {children}
       </StyledInner>
     </StyledOuter>
