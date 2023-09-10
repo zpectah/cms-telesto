@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@mui/material';
 import { ADMIN_CFG } from '../../config';
 import { Container } from '../Container';
-import { useLayoutContext } from '@/core';
+import { useLayoutContext } from '../../context';
 import { HeaderProps } from './types';
 
 const StyledHeader = styled('header')`

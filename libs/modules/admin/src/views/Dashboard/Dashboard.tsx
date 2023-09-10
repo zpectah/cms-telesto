@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { useCounterSlice } from '@/store';
-import { useColorModeContext } from '@/core';
+import { useColorModeContext } from '../../context';
 import { LocaleToggle } from '../../components';
 import { PageLayout, ViewLayout } from '../../layout';
 

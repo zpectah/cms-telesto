@@ -3,7 +3,7 @@ import { styled, Drawer } from '@mui/material';
 import { ADMIN_CFG } from '../../config';
 import { Container } from '../Container';
 import { Footer } from '../Footer';
-import { useLayoutContext } from '@/core';
+import { useLayoutContext } from '../../context';
 import { ViewLayoutProps } from './types';
 
 const StyledContent = styled('div', {

@@ -1,11 +1,7 @@
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
-import { adminStore } from '@/store';
-import { adminTheme } from '@/modules/admin';
 import {
-  ColorModeContextProvider,
-  LayoutContextProvider,
   CssBase,
   ReduxProvider,
   ThemeProvider,
@@ -13,9 +9,13 @@ import {
   useLayout,
 } from '@/core';
 import {
+  ColorModeContextProvider,
   LOCAL_STORAGE_SIDEBAR_KEY,
   LOCAL_STORAGE_THEME_KEY,
+  LayoutContextProvider,
+  adminTheme,
 } from '@/modules/admin';
+import { adminStore } from '@/store';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';

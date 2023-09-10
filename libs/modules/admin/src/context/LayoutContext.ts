@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-// import { ADMIN_CFG } from '../config';
+import { ADMIN_CFG } from '../config';
 
 export interface LayoutContextProps {
   open: boolean;
@@ -7,8 +7,7 @@ export interface LayoutContextProps {
 }
 
 const defaultContext: LayoutContextProps = {
-  // open: ADMIN_CFG.CONTEXT.DEFAULT.LAYOUT,
-  open: false, // TODO
+  open: ADMIN_CFG.CONTEXT.DEFAULT.LAYOUT,
   toggle: () => null,
 };
 
