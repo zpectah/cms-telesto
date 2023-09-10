@@ -5,8 +5,11 @@ import { BreadcrumbsProps } from './types';
 const Breadcrumbs = (props: BreadcrumbsProps) => {
   return (
     <MuiBreadcrumbs>
-      <Link>Link</Link>
-      <Link>Link</Link>
+      <Link>CMS</Link>
+      <Link>Language</Link>
+      <Link>Section</Link>
+      <Link>Page</Link>
+      <Link>Detail:Tab:Panel</Link>
     </MuiBreadcrumbs>
   );
 };

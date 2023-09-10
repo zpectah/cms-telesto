@@ -66,7 +66,7 @@ const SidebarNav = (props: SidebarNavProps) => {
 
   return (
     <nav aria-label="main mailbox folders">
-      <List>
+      <List disablePadding>
         {menuItems[variant].map(
           ({ id, label, target, isSelected, icon, options }) => {
             return (

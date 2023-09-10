@@ -30,26 +30,40 @@ const ViewLayout = (props: ViewLayoutProps) => {
           style={{ display: 'flex', flexDirection: 'row' }}
           offsetY={contentOffsetY}
         >
-          {sidebar && (
-            <Box sx={{ width: { xs: '150px', sm: '200px', md: '225px' } }}>
-              <Container>{sidebar}</Container>
-            </Box>
-          )}
-          <div>
-            <Container>
+          <Container>
+            <div>
               <div>
-                <div>
-                  <Breadcrumbs />
-                </div>
-                <div>
-                  {title && <h1>{title}</h1>}
-                  {subtitle && <p>{subtitle}</p>}
-                </div>
+                <Breadcrumbs />
               </div>
-              <div>{children}</div>
-              {!withoutFooter && <Footer />}
-            </Container>
-          </div>
+              <div>
+                {title && <h1>{title}</h1>}
+                {subtitle && <p>{subtitle}</p>}
+              </div>
+            </div>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+              }}
+            >
+              {sidebar && (
+                <Box
+                  sx={{
+                    width: {
+                      xs: '150px',
+                      md: '200px',
+                    },
+                    marginRight: '1rem',
+                    flexShrink: 0,
+                  }}
+                >
+                  {sidebar}
+                </Box>
+              )}
+              <Box>{children}</Box>
+            </Box>
+            {!withoutFooter && <Footer />}
+          </Container>
         </Content>
       </Wrapper>
     </>
