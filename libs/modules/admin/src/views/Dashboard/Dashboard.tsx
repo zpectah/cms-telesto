@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   return (
     <PageLayout pageKey="dashboard">
-      <ViewLayout sidebar={<>sidebar ?</>}>
+      <ViewLayout title="Dashboard" subtitle="Page subtitle">
         <div>
           Dashboard View ... {t('test_title')}
           <br />

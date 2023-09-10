@@ -10,7 +10,11 @@ const Settings = () => {
 
   return (
     <PageLayout pageKey="settings">
-      <ViewLayout>
+      <ViewLayout
+        sidebar={<>Artificial Sidebar</>}
+        title="Settings"
+        subtitle="Page subtitle"
+      >
         <div>
           Settings module ... {t('test_title')}
           <div>

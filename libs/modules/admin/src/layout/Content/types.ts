@@ -1,4 +1,7 @@
+import { CSSProperties } from 'react';
 import { WithChildren } from '@/core';
 
-// eslint-disable-next-line
-export interface ContentProps extends WithChildren {}
+export interface ContentProps extends WithChildren {
+  style?: CSSProperties;
+  offsetY?: boolean;
+}
