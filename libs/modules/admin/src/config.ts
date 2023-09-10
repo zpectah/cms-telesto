@@ -17,8 +17,8 @@ export const CONFIG = {
     },
   },
   STYLE: {
-    HEADER_HEIGHT_DESKTOP: '80px',
-    HEADER_HEIGHT_MOBILE: '60px',
+    HEADER_HEIGHT_DESKTOP: '60px',
+    HEADER_HEIGHT_MOBILE: '40px',
     SIDEBAR_WIDTH_DESKTOP: '250px',
     SIDEBAR_WIDTH_MOBILE: '100%',
   },

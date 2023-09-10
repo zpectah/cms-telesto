@@ -3,6 +3,7 @@ import { styled, Drawer } from '@mui/material';
 import { CONFIG } from '../../config';
 import { SidebarProps } from './types';
 import { Scrollable } from '@/ui';
+import SidebarNav from './SidebarNav';
 
 const StyledWrapper = styled('div')(({ theme }) => ({
   width: '100%',
@@ -18,7 +19,7 @@ const StyledPrimary = styled('div')(({ theme }) => ({
 const StyledSecondary = styled('div')(({ theme }) => ({}));
 
 const Sidebar = (props: SidebarProps) => {
-  const { children, open } = props;
+  const { open } = props;
 
   return (
     <Drawer
@@ -50,8 +51,12 @@ const Sidebar = (props: SidebarProps) => {
     >
       <Scrollable>
         <StyledWrapper>
-          <StyledPrimary>{children}</StyledPrimary>
-          <StyledSecondary>secondary</StyledSecondary>
+          <StyledPrimary>
+            <SidebarNav variant="primary" />
+          </StyledPrimary>
+          <StyledSecondary>
+            <SidebarNav variant="secondary" />
+          </StyledSecondary>
         </StyledWrapper>
       </Scrollable>
     </Drawer>
