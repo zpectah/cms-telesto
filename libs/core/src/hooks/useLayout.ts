@@ -1,9 +1,5 @@
 import { useEffect, useState } from 'react';
-import {
-  getLocalStorageValue,
-  setLocalStorageValue,
-  toggleBodyClass,
-} from '../utils';
+import { getLocalStorageValue, setLocalStorageValue } from '../utils';
 
 export interface UseLayoutReturn {
   sidebar: {
@@ -19,13 +15,11 @@ export const useLayout = (key: string): UseLayoutReturn => {
     const value = !sidebarOpen;
     setSidebarOpen(!sidebarOpen);
     setLocalStorageValue(key, value);
-    toggleBodyClass('is-sidebar-open', value);
   };
 
   useEffect(() => {
     const value = getLocalStorageValue(key);
     setSidebarOpen(value);
-    toggleBodyClass('is-sidebar-open', value);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

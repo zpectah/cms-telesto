@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/material';
-import { ADMIN_CFG } from '../../config';
+import { CONFIG } from '../../config';
 import { Header } from '../Header';
 import { PageLayoutProps } from './types';
 
@@ -27,9 +27,9 @@ const StyledContent = styled('main')<{ centered?: boolean }>`
 
 const HeaderOffset = styled('div')(({ theme }) => ({
   width: '100%',
-  height: ADMIN_CFG.STYLE.HEADER_HEIGHT_MOBILE,
+  height: CONFIG.STYLE.HEADER_HEIGHT_MOBILE,
   [theme.breakpoints.up('sm')]: {
-    height: ADMIN_CFG.STYLE.HEADER_HEIGHT_DESKTOP,
+    height: CONFIG.STYLE.HEADER_HEIGHT_DESKTOP,
   },
 }));
 

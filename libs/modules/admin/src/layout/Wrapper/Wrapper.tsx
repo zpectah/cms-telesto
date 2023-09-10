@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/material';
-import { ADMIN_CFG } from '../../config';
+import { CONFIG } from '../../config';
 import { WrapperProps } from './types';
 import { Scrollable } from '@/ui';
 
@@ -11,9 +11,9 @@ const StyledWrapper = styled('div', {
 }>(({ theme, open }) => ({
   width: '100%',
   marginLeft: 0,
-  height: `calc(100vh - ${ADMIN_CFG.STYLE.HEADER_HEIGHT_MOBILE})`,
+  height: `calc(100vh - ${CONFIG.STYLE.HEADER_HEIGHT_MOBILE})`,
   [theme.breakpoints.up('sm')]: {
-    height: `calc(100vh - ${ADMIN_CFG.STYLE.HEADER_HEIGHT_DESKTOP})`,
+    height: `calc(100vh - ${CONFIG.STYLE.HEADER_HEIGHT_DESKTOP})`,
   },
   transition: theme.transitions.create(['margin', 'width'], {
     easing: theme.transitions.easing.sharp,
@@ -22,19 +22,17 @@ const StyledWrapper = styled('div', {
   ...(open && {
     width: '100%',
     marginLeft: 0,
-    height: `calc(100vh - ${ADMIN_CFG.STYLE.HEADER_HEIGHT_MOBILE})`,
+    height: `calc(100vh - ${CONFIG.STYLE.HEADER_HEIGHT_MOBILE})`,
     [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${ADMIN_CFG.STYLE.SIDEBAR_WIDTH_DESKTOP})`,
-      marginLeft: ADMIN_CFG.STYLE.SIDEBAR_WIDTH_DESKTOP,
-      height: `calc(100vh - ${ADMIN_CFG.STYLE.HEADER_HEIGHT_DESKTOP})`,
+      width: `calc(100% - ${CONFIG.STYLE.SIDEBAR_WIDTH_DESKTOP})`,
+      marginLeft: CONFIG.STYLE.SIDEBAR_WIDTH_DESKTOP,
+      height: `calc(100vh - ${CONFIG.STYLE.HEADER_HEIGHT_DESKTOP})`,
     },
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
-
-  'body.is-sidebar-open &': {},
 }));
 
 const Wrapper = (props: WrapperProps) => {

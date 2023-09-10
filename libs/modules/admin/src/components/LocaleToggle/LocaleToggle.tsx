@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/router';
-import { ADMIN_CFG } from '../../config';
+import { CONFIG } from '../../config';
 import { Button } from '@/ui';
 
 const LocaleToggle = () => {
@@ -23,7 +23,7 @@ const LocaleToggle = () => {
 
   return (
     <>
-      {ADMIN_CFG.LOCALES.LIST.map((loc) => (
+      {CONFIG.LOCALES.LIST.map((loc) => (
         <Button
           key={loc}
           onClick={() => localeToggle(loc)}

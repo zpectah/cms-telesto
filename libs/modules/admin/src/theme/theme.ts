@@ -6,7 +6,6 @@ const adminTheme = createTheme({
       styleOverrides: {
         body: {
           overflow: 'hidden',
-          '&.is-sidebar-open': {},
         },
       },
     },

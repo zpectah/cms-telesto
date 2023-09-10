@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled, Drawer } from '@mui/material';
-import { ADMIN_CFG } from '../../config';
+import { CONFIG } from '../../config';
 import { SidebarProps } from './types';
 import { Scrollable } from '@/ui';
 
@@ -27,22 +27,22 @@ const Sidebar = (props: SidebarProps) => {
       anchor="left"
       sx={{
         width: {
-          xs: ADMIN_CFG.STYLE.SIDEBAR_WIDTH_MOBILE,
-          sm: ADMIN_CFG.STYLE.SIDEBAR_WIDTH_DESKTOP,
+          xs: CONFIG.STYLE.SIDEBAR_WIDTH_MOBILE,
+          sm: CONFIG.STYLE.SIDEBAR_WIDTH_DESKTOP,
         },
         flexShrink: 0,
         '& .MuiDrawer-paper': {
           width: {
-            xs: ADMIN_CFG.STYLE.SIDEBAR_WIDTH_MOBILE,
-            sm: ADMIN_CFG.STYLE.SIDEBAR_WIDTH_DESKTOP,
+            xs: CONFIG.STYLE.SIDEBAR_WIDTH_MOBILE,
+            sm: CONFIG.STYLE.SIDEBAR_WIDTH_DESKTOP,
           },
           top: {
-            xs: ADMIN_CFG.STYLE.HEADER_HEIGHT_MOBILE,
-            sm: ADMIN_CFG.STYLE.HEADER_HEIGHT_DESKTOP,
+            xs: CONFIG.STYLE.HEADER_HEIGHT_MOBILE,
+            sm: CONFIG.STYLE.HEADER_HEIGHT_DESKTOP,
           },
           height: {
-            xs: `calc(100% - ${ADMIN_CFG.STYLE.HEADER_HEIGHT_MOBILE})`,
-            sm: `calc(100% - ${ADMIN_CFG.STYLE.HEADER_HEIGHT_DESKTOP})`,
+            xs: `calc(100% - ${CONFIG.STYLE.HEADER_HEIGHT_MOBILE})`,
+            sm: `calc(100% - ${CONFIG.STYLE.HEADER_HEIGHT_DESKTOP})`,
           },
           boxSizing: 'border-box',
         },

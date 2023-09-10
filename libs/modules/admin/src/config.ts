@@ -1,4 +1,7 @@
-export const ADMIN_CFG = {
+import GLOBAL from '../../../../cms.config';
+
+export const CONFIG = {
+  GLOBAL,
   META: {
     TITLE: 'Admin default title',
     DESCRIPTION: 'Admin default description',
