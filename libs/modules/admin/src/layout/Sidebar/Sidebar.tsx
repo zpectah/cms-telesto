@@ -1,7 +1,21 @@
 import React from 'react';
-import { Drawer } from '@mui/material';
+import { styled, Drawer } from '@mui/material';
 import { ADMIN_CFG } from '../../config';
 import { SidebarProps } from './types';
+import { Scrollable } from '@/ui';
+
+const StyledWrapper = styled('div')(({ theme }) => ({
+  width: '100%',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+}));
+
+const StyledPrimary = styled('div')(({ theme }) => ({
+  flex: '1',
+}));
+
+const StyledSecondary = styled('div')(({ theme }) => ({}));
 
 const Sidebar = (props: SidebarProps) => {
   const { children, open } = props;
@@ -34,7 +48,12 @@ const Sidebar = (props: SidebarProps) => {
         },
       }}
     >
-      {children}
+      <Scrollable>
+        <StyledWrapper>
+          <StyledPrimary>{children}</StyledPrimary>
+          <StyledSecondary>secondary</StyledSecondary>
+        </StyledWrapper>
+      </Scrollable>
     </Drawer>
   );
 };

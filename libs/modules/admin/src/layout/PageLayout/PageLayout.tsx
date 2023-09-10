@@ -25,10 +25,13 @@ const StyledContent = styled('main')<{ centered?: boolean }>`
   `}
 `;
 
-const HeaderOffset = styled('div')`
-  width: 100%;
-  height: ${ADMIN_CFG.STYLE.HEADER_HEIGHT_DESKTOP};
-`;
+const HeaderOffset = styled('div')(({ theme }) => ({
+  width: '100%',
+  height: ADMIN_CFG.STYLE.HEADER_HEIGHT_MOBILE,
+  [theme.breakpoints.up('sm')]: {
+    height: ADMIN_CFG.STYLE.HEADER_HEIGHT_DESKTOP,
+  },
+}));
 
 const PageLayout = (props: PageLayoutProps) => {
   const { children, variant = 'default', withoutHeader } = props;
