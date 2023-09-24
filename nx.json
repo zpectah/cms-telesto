@@ -3,15 +3,12 @@
   "affected": {
     "defaultBase": "master"
   },
-  "cli": {
-    "packageManager": "yarn"
-  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "OTJjNzJhM2YtNTkxZS00NTQ3LWI3NzgtMDkxZGMzYjI5OWZkfHJlYWQtd3JpdGU="
+        "accessToken": "MTc1YTZiNjgtYmYzYy00ZDg3LTg0MGQtYWY4ODNkNDA3YzM4fHJlYWQtd3JpdGU="
       }
     }
   },
@@ -23,15 +20,16 @@
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
+    "e2e": {
+      "inputs": ["default", "^production"]
+    },
     "lint": {
       "inputs": [
         "default",
         "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore"
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.js"
       ]
-    },
-    "e2e": {
-      "inputs": ["default", "^production"]
     }
   },
   "namedInputs": {
@@ -43,7 +41,8 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s",
-      "!{projectRoot}/.eslintrc.json"
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.js"
     ],
     "sharedGlobals": []
   },
@@ -56,7 +55,7 @@
     },
     "@nx/next": {
       "application": {
-        "style": "@emotion/styled",
+        "style": "css",
         "linter": "eslint"
       }
     }

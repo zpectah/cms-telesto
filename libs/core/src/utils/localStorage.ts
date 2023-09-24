@@ -1,12 +1,15 @@
-export const getLocalStorageValue = (key: string) => {
+const getValue = (key: string) => {
   let response;
   const value = window?.localStorage.getItem(key);
-  if (value) {
-    response = JSON.parse(value);
-  }
+  if (value) response = value;
 
   return response;
 };
 
-export const setLocalStorageValue = (key: string, value: unknown) =>
-  window.localStorage.setItem(key, JSON.stringify(value));
+const setValue = (key: string, value: string | number | boolean) =>
+  window?.localStorage.setItem(key, String(value));
+
+export const localStorage = {
+  getValue,
+  setValue,
+};

@@ -1,1 +1,1 @@
-export const EXAMPLE_CONSTANT = 'foo';
+export const fgvcbv = '';
