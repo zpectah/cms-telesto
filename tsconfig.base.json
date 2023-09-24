@@ -16,11 +16,11 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
+      "@/admin": ["libs/admin/src/index.ts"],
       "@/api": ["libs/api/src/index.ts"],
       "@/api/server": ["libs/api/src/server.ts"],
-      "@/core": ["libs/core/src/index.ts"],
-      "@/admin": ["libs/admin/src/index.ts"],
       "@/client": ["libs/client/src/index.ts"],
+      "@/core": ["libs/core/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

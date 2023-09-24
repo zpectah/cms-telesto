@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { styled, Box, Drawer, IconButton, Button, Typography } from '@mui/joy';
+import { styled, Box, Drawer, IconButton, Typography } from '@mui/joy';
 import { ArrowForwardIos } from '@mui/icons-material';
 import { STYLES } from '../../constants';
 import { WithChildren } from '../../types';

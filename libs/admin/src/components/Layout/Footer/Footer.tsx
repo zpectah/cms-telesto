@@ -1,22 +1,19 @@
 import React from 'react';
-import { styled, Container } from '@mui/joy';
+import { styled, Container, Typography } from '@mui/joy';
 import CFG from '../../../../../../telesto.config';
-import { WithChildren } from '../../../types';
-
-export interface FooterProps extends Partial<WithChildren> {}
 
 const Wrapper = styled('footer')({
   paddingTop: '1rem',
   paddingBottom: '1rem',
 });
 
-const Footer = (props: FooterProps) => {
-  const { children } = props;
-
+const Footer = () => {
   return (
     <Wrapper>
       <Container maxWidth={false}>
-        {children}... ... {CFG.meta.name}
+        <Typography level="body-sm" color="neutral">
+          &copy; {CFG.meta.name} v{CFG.meta.version} | All rights reserved
+        </Typography>
       </Container>
     </Wrapper>
   );

@@ -3,6 +3,7 @@ import { styled } from '@mui/joy';
 import { STYLES } from '../../../constants';
 import { WithChildren } from '../../../types';
 import SidebarNav from './SidebarNav';
+import { useSidebarNav } from './useSidebarNav';
 
 export interface SidebarProps extends Partial<WithChildren> {
   sidebarOpen: boolean;
@@ -43,14 +44,19 @@ const SidebarBlock = styled('div')(({ theme }) => ({}));
 const Sidebar = (props: SidebarProps) => {
   const { children, sidebarOpen } = props;
 
+  const { primary, secondary } = useSidebarNav();
+
   return (
     <WrapperOuter sidebarOpen={sidebarOpen}>
       <WrapperMiddle>
         <WrapperInner>
           <SidebarBlock>
-            <SidebarNav />
+            <SidebarNav navItems={primary} />
           </SidebarBlock>
-          {children && <SidebarBlock>{children}</SidebarBlock>}
+          <SidebarBlock>
+            {children}
+            <SidebarNav navItems={secondary} />
+          </SidebarBlock>
         </WrapperInner>
       </WrapperMiddle>
     </WrapperOuter>

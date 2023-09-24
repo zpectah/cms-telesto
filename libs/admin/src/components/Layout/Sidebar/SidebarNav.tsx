@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import {
   List,
   ListItem,
@@ -8,47 +7,14 @@ import {
   ListItemDecorator,
   ListItemContent,
 } from '@mui/joy';
+import { SidebarNavItemProps } from './types';
 
-const SidebarNav = () => {
-  const { pathname } = useRouter();
+export interface SidebarNavProps {
+  navItems: SidebarNavItemProps[];
+}
 
-  const navItems = [
-    {
-      id: 0,
-      label: 'Dashboard',
-      path: '/',
-      icon: null,
-      selected: pathname === '/',
-    },
-    {
-      id: 1,
-      label: 'Posts',
-      path: '/posts',
-      icon: null,
-      selected: !!pathname.match('/posts'),
-    },
-    {
-      id: 3,
-      label: 'Help',
-      path: '/help',
-      icon: null,
-      selected: pathname === '/help',
-    },
-    {
-      id: 4,
-      label: 'Settings',
-      path: '/settings',
-      icon: null,
-      selected: !!pathname.match('/settings'),
-    },
-    {
-      id: 6,
-      label: 'Profile',
-      path: '/profile',
-      icon: null,
-      selected: !!pathname.match('/profile'),
-    },
-  ];
+const SidebarNav = (props: SidebarNavProps) => {
+  const { navItems = [] } = props;
 
   return (
     <List size="lg" sx={{ paddingTop: 0, paddingBottom: 0 }}>

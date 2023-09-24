@@ -10,7 +10,7 @@ const Dashboard = () => {
   const { auth, setAuth } = useAuthSlice();
 
   return (
-    <PageLayout sidebar={<>sidebar ???</>}>
+    <PageLayout>
       <ViewLayout
         breadcrumbs
         heading={{
