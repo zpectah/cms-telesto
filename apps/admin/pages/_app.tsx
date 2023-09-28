@@ -6,6 +6,7 @@ import {
   StylesProvider,
   PageLayoutContextProvider,
   usePageLayout,
+  PreloaderProvider,
 } from '@/admin';
 
 function App({ Component, pageProps }: AppProps) {
@@ -18,7 +19,9 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <StylesProvider>
         <PageLayoutContextProvider value={pageLayoutContext}>
-          <Component {...pageProps} />
+          <PreloaderProvider>
+            <Component {...pageProps} />
+          </PreloaderProvider>
         </PageLayoutContextProvider>
       </StylesProvider>
     </>

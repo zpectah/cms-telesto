@@ -6,16 +6,19 @@ import { useBreadcrumbs } from './useBreadcrumbs';
 
 const Breadcrumbs = () => {
   const { i18n } = useTranslation();
-
   const { pageName, slugName, id } = useBreadcrumbs();
 
   return (
     <MuiBreadcrumbs
       aria-label="breadcrumbs"
       size="sm"
-      sx={{ paddingLeft: 0, paddingRight: 0 }}
+      sx={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        display: { xs: 'none', md: 'block' },
+      }}
     >
-      <Typography>{CFG.meta.name}</Typography>
+      <Typography sx={{ fontWeight: 800 }}>{CFG.meta.name}</Typography>
       <Typography>{i18n.language}</Typography>
       {pageName && <Typography>{pageName}</Typography>}
       {id && <Typography>#{id}</Typography>}

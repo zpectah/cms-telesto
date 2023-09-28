@@ -1,3 +1,5 @@
+import { Routes } from '../types';
+
 export default {
   login: {
     name: 'Login',
@@ -13,7 +15,7 @@ export default {
     routes: {
       general: {
         name: 'General',
-        slug: null,
+        slug: undefined,
       },
       client: {
         name: 'Client',
@@ -43,7 +45,7 @@ export default {
     routes: {
       general: {
         name: 'General',
-        slug: null,
+        slug: undefined,
       },
       content: {
         name: 'Content',
@@ -57,7 +59,7 @@ export default {
     routes: {
       general: {
         name: 'General',
-        slug: null,
+        slug: undefined,
       },
       personal: {
         name: 'Personal',
@@ -82,7 +84,7 @@ export default {
     path: '/members',
   },
   menu: {
-    name: 'menu',
+    name: 'Menu',
     path: '/menu',
   },
   messages: {
@@ -109,15 +111,4 @@ export default {
     name: 'Users',
     path: '/users',
   },
-} as {
-  [key: string]: {
-    name: string;
-    path: string;
-    routes?: {
-      [key: string]: {
-        name: string;
-        slug: string | null;
-      };
-    };
-  };
-};
+} as Routes;

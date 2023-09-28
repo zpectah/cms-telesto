@@ -19,8 +19,7 @@ const WrapperOuter = styled('header')(({ theme }) => ({
 const WrapperInner = styled('div')(({ theme }) => ({
   width: '100%',
   height: '100%',
-  paddingLeft: '.5rem',
-  paddingRight: '.5rem',
+
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
@@ -34,6 +33,10 @@ const HeaderBlock = styled('div')(({ theme }) => ({
   gap: '.5rem',
   alignItems: 'center',
 }));
+const HeaderBlockSecondary = styled(HeaderBlock)(({ theme }) => ({
+  paddingLeft: '.5rem',
+  paddingRight: '.5rem',
+}));
 
 const Header = (props: HeaderProps) => {
   const { children } = props;
@@ -46,9 +49,9 @@ const Header = (props: HeaderProps) => {
           <HeaderLogo />
         </HeaderBlock>
         {children && <HeaderBlock>{children}</HeaderBlock>}
-        <HeaderBlock>
+        <HeaderBlockSecondary>
           <HeaderUser />
-        </HeaderBlock>
+        </HeaderBlockSecondary>
       </WrapperInner>
     </WrapperOuter>
   );
