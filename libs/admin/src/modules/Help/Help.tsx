@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { useRouter } from 'next/router';
+import { routes } from '../../config';
 import {
   PageLayout,
   ViewLayout,
@@ -14,24 +15,24 @@ const Help = () => {
   const menuItems = [
     {
       id: 0,
-      label: 'General',
-      path: '/help',
+      label: routes.help.routes?.general.name,
+      path: routes.help.path,
       disabled: false,
       selected: slug === undefined,
     },
     {
       id: 1,
-      label: 'History',
-      path: '/help/history',
+      label: routes.help.routes?.content.name,
+      path: `${routes.help.path}/${routes.help.routes?.content.slug}`,
       disabled: false,
-      selected: slug === 'history',
+      selected: slug === routes.help.routes?.content.slug,
     },
   ];
 
   const renderPanel = useMemo(() => {
     switch (slug) {
-      case 'history':
-        return <div>Blacklist panel</div>;
+      case 'content':
+        return <div>Content panel</div>;
 
       case undefined:
         return <div>General panel</div>;

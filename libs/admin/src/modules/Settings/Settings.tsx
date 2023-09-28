@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { useRouter } from 'next/router';
+import { routes } from '../../config';
 import {
   PageLayout,
   ViewLayout,
@@ -14,45 +15,45 @@ const Settings = () => {
   const menuItems = [
     {
       id: 0,
-      label: 'General',
-      path: '/settings',
+      label: routes.settings.routes?.general.name,
+      path: routes.settings.path,
       disabled: false,
       selected: slug === undefined,
     },
     {
       id: 1,
-      label: 'Client',
-      path: '/settings/client',
+      label: routes.settings.routes?.client.name,
+      path: `${routes.settings.path}/${routes.settings.routes?.client.slug}`,
       disabled: false,
-      selected: slug === 'client',
+      selected: slug === routes.settings.routes?.client.slug,
     },
     {
       id: 2,
-      label: 'Content',
-      path: '/settings/content',
+      label: routes.settings.routes?.content.name,
+      path: `${routes.settings.path}/${routes.settings.routes?.content.slug}`,
       disabled: false,
-      selected: slug === 'content',
+      selected: slug === routes.settings.routes?.content.slug,
     },
     {
       id: 3,
-      label: 'Locales',
-      path: '/settings/locales',
+      label: routes.settings.routes?.locales.name,
+      path: `${routes.settings.path}/${routes.settings.routes?.locales.slug}`,
       disabled: false,
-      selected: slug === 'locales',
+      selected: slug === routes.settings.routes?.locales.slug,
     },
     {
       id: 4,
-      label: 'Maintenance',
-      path: '/settings/maintenance',
+      label: routes.settings.routes?.maintenance.name,
+      path: `${routes.settings.path}/${routes.settings.routes?.maintenance.slug}`,
       disabled: false,
-      selected: slug === 'maintenance',
+      selected: slug === routes.settings.routes?.maintenance.slug,
     },
     {
       id: 5,
-      label: 'Blacklist',
-      path: '/settings/blacklist',
+      label: routes.settings.routes?.blacklist.name,
+      path: `${routes.settings.path}/${routes.settings.routes?.blacklist.slug}`,
       disabled: false,
-      selected: slug === 'blacklist',
+      selected: slug === routes.settings.routes?.blacklist.slug,
     },
   ];
 

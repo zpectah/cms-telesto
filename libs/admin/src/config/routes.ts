@@ -10,14 +10,60 @@ export default {
   settings: {
     name: 'Settings',
     path: '/settings',
+    routes: {
+      general: {
+        name: 'General',
+        slug: null,
+      },
+      client: {
+        name: 'Client',
+        slug: 'client',
+      },
+      content: {
+        name: 'Content',
+        slug: 'content',
+      },
+      locales: {
+        name: 'Locales',
+        slug: 'locales',
+      },
+      maintenance: {
+        name: 'Maintenance',
+        slug: 'maintenance',
+      },
+      blacklist: {
+        name: 'Blacklist',
+        slug: 'blacklist',
+      },
+    },
   },
   help: {
     name: 'Help',
     path: '/help',
+    routes: {
+      general: {
+        name: 'General',
+        slug: null,
+      },
+      content: {
+        name: 'Content',
+        slug: 'content',
+      },
+    },
   },
   profile: {
     name: 'Profile',
     path: '/profile',
+    routes: {
+      general: {
+        name: 'General',
+        slug: null,
+      },
+      history: {
+        name: 'History',
+        slug: 'history',
+      },
+    },
   },
   posts: {
     name: 'Posts',
@@ -59,4 +105,15 @@ export default {
     name: 'Users',
     path: '/users',
   },
-} as { [key: string]: { name: string; path: string } };
+} as {
+  [key: string]: {
+    name: string;
+    path: string;
+    routes?: {
+      [key: string]: {
+        name: string;
+        slug: string | null;
+      };
+    };
+  };
+};

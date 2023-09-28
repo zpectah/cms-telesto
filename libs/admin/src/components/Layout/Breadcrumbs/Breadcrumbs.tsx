@@ -1,33 +1,13 @@
-import React, { useEffect, useMemo } from 'react';
-import { useRouter } from 'next/router';
+import React from 'react';
 import { Breadcrumbs as MuiBreadcrumbs, Typography } from '@mui/joy';
 import { useTranslation } from 'next-i18next';
 import CFG from '../../../../../../telesto.config';
-import { routes } from '../../../config';
+import { useBreadcrumbs } from './useBreadcrumbs';
 
 const Breadcrumbs = () => {
   const { i18n } = useTranslation();
-  const { pathname, query } = useRouter();
-  const { slug, id } = query;
 
-  const page = useMemo(() => {
-    let page;
-    const keys = Object.keys(routes);
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      const item = routes[key];
-      const match = pathname.match(item.path);
-      if (match) {
-        page = item.name;
-      }
-    }
-
-    return page;
-  }, [pathname]);
-
-  useEffect(() => {
-    console.log('query', query);
-  }, [query]);
+  const { pageName, slugName, id } = useBreadcrumbs();
 
   return (
     <MuiBreadcrumbs
@@ -37,9 +17,9 @@ const Breadcrumbs = () => {
     >
       <Typography>{CFG.meta.name}</Typography>
       <Typography>{i18n.language}</Typography>
-      {page && <Typography>{page}</Typography>}
+      {pageName && <Typography>{pageName}</Typography>}
       {id && <Typography>#{id}</Typography>}
-      {slug && <Typography>{slug}</Typography>}
+      {slugName && <Typography>{slugName}</Typography>}
     </MuiBreadcrumbs>
   );
 };

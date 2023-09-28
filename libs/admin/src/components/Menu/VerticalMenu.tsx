@@ -4,7 +4,7 @@ import { List, ListItem, ListItemButton, ListItemContent } from '@mui/joy';
 
 export type VerticalMenuItemProps = {
   id: number;
-  label: string;
+  label: string | undefined;
   path: string;
   disabled?: boolean;
   selected?: boolean;
