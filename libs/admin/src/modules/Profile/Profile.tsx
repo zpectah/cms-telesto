@@ -22,6 +22,13 @@ const Profile = () => {
     },
     {
       id: 1,
+      label: routes.profile.routes?.personal.name,
+      path: `${routes.profile.path}/${routes.profile.routes?.personal.slug}`,
+      disabled: false,
+      selected: slug === routes.profile.routes?.personal.slug,
+    },
+    {
+      id: 2,
       label: routes.profile.routes?.history.name,
       path: `${routes.profile.path}/${routes.profile.routes?.history.slug}`,
       disabled: false,
@@ -31,7 +38,10 @@ const Profile = () => {
 
   const renderPanel = useMemo(() => {
     switch (slug) {
-      case 'history':
+      case routes.profile.routes?.personal.slug:
+        return <div>Personal panel</div>;
+
+      case routes.profile.routes?.history.slug:
         return <div>History panel</div>;
 
       case undefined:

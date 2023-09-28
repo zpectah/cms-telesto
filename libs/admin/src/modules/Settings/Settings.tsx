@@ -59,19 +59,19 @@ const Settings = () => {
 
   const renderPanel = useMemo(() => {
     switch (slug) {
-      case 'client':
+      case routes.settings.routes?.client.slug:
         return <div>Client panel</div>;
 
-      case 'content':
+      case routes.settings.routes?.content.slug:
         return <div>Content panel</div>;
 
-      case 'locales':
+      case routes.settings.routes?.locales.slug:
         return <div>Locales panel</div>;
 
-      case 'maintenance':
+      case routes.settings.routes?.maintenance.slug:
         return <div>Maintenance panel</div>;
 
-      case 'blacklist':
+      case routes.settings.routes?.blacklist.slug:
         return <div>Blacklist panel</div>;
 
       case undefined:

@@ -59,6 +59,10 @@ export default {
         name: 'General',
         slug: null,
       },
+      personal: {
+        name: 'Personal',
+        slug: 'personal',
+      },
       history: {
         name: 'History',
         slug: 'history',

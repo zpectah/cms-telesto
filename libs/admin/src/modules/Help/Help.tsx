@@ -31,7 +31,7 @@ const Help = () => {
 
   const renderPanel = useMemo(() => {
     switch (slug) {
-      case 'content':
+      case routes.help.routes?.content.slug:
         return <div>Content panel</div>;
 
       case undefined:
