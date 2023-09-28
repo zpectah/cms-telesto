@@ -1,11 +1,15 @@
 import React, { useMemo } from 'react';
 import { useRouter } from 'next/router';
-import { Box, List, ListItem, ListItemButton, ListItemContent } from '@mui/joy';
-import { PageLayout, ViewLayout } from '../../components';
+import {
+  PageLayout,
+  ViewLayout,
+  VerticalMenu,
+  ContentWithSidebar,
+} from '../../components';
 
 const Profile = () => {
   const router = useRouter();
-  const { panel } = router.query;
+  const { slug } = router.query;
 
   const menuItems = [
     {
@@ -13,19 +17,19 @@ const Profile = () => {
       label: 'General',
       path: '/profile',
       disabled: false,
-      selected: panel === undefined,
+      selected: slug === undefined,
     },
     {
       id: 1,
       label: 'History',
       path: '/profile/history',
       disabled: false,
-      selected: panel === 'history',
+      selected: slug === 'history',
     },
   ];
 
   const renderPanel = useMemo(() => {
-    switch (panel) {
+    switch (slug) {
       case 'history':
         return <div>Blacklist panel</div>;
 
@@ -35,38 +39,14 @@ const Profile = () => {
       default:
         return <div>Error view</div>;
     }
-  }, [panel]);
+  }, [slug]);
 
   return (
     <PageLayout>
       <ViewLayout breadcrumbs heading={{ title: 'Profile' }}>
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'row',
-            gap: '1rem',
-          }}
-        >
-          <Box sx={{ width: '250px' }}>
-            <List>
-              {menuItems.map((item) => (
-                <ListItem key={item.id}>
-                  <ListItemButton
-                    onClick={() => router.push(item.path)}
-                    disabled={item.disabled}
-                    selected={item.selected}
-                  >
-                    <ListItemContent>{item.label}</ListItemContent>
-                  </ListItemButton>
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-          <Box sx={{ flex: 1 }}>
-            <div>{renderPanel}</div>
-          </Box>
-        </Box>
+        <ContentWithSidebar sidebar={<VerticalMenu items={menuItems} />}>
+          {renderPanel}
+        </ContentWithSidebar>
       </ViewLayout>
     </PageLayout>
   );

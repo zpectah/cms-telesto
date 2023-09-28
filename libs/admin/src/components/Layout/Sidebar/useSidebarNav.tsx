@@ -80,31 +80,17 @@ export const useSidebarNav = () => {
   const secondary: SidebarNavItemProps[] = [
     {
       id: 0,
-      label: 'Settings',
-      path: routes.settings.path,
-      icon: null,
-      selected: !!pathname.match(routes.settings.path),
-    },
-    {
-      id: 1,
       label: 'Users',
       path: routes.users.path,
       icon: null,
       selected: !!pathname.match(routes.users.path),
     },
     {
-      id: 2,
-      label: 'Profile *',
-      path: routes.profile.path,
+      id: 1,
+      label: 'Settings',
+      path: routes.settings.path,
       icon: null,
-      selected: !!pathname.match(routes.profile.path),
-    },
-    {
-      id: 3,
-      label: 'Help',
-      path: routes.help.path,
-      icon: null,
-      selected: pathname === routes.help.path,
+      selected: !!pathname.match(routes.settings.path),
     },
   ];
 

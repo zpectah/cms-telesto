@@ -1,11 +1,15 @@
 import React, { useMemo } from 'react';
 import { useRouter } from 'next/router';
-import { Box, List, ListItem, ListItemButton, ListItemContent } from '@mui/joy';
-import { PageLayout, ViewLayout } from '../../components';
+import {
+  PageLayout,
+  ViewLayout,
+  VerticalMenu,
+  ContentWithSidebar,
+} from '../../components';
 
 const Settings = () => {
   const router = useRouter();
-  const { panel } = router.query;
+  const { slug } = router.query;
 
   const menuItems = [
     {
@@ -13,47 +17,47 @@ const Settings = () => {
       label: 'General',
       path: '/settings',
       disabled: false,
-      selected: panel === undefined,
+      selected: slug === undefined,
     },
     {
       id: 1,
       label: 'Client',
       path: '/settings/client',
       disabled: false,
-      selected: panel === 'client',
+      selected: slug === 'client',
     },
     {
       id: 2,
       label: 'Content',
       path: '/settings/content',
       disabled: false,
-      selected: panel === 'content',
+      selected: slug === 'content',
     },
     {
       id: 3,
       label: 'Locales',
       path: '/settings/locales',
       disabled: false,
-      selected: panel === 'locales',
+      selected: slug === 'locales',
     },
     {
       id: 4,
       label: 'Maintenance',
       path: '/settings/maintenance',
       disabled: false,
-      selected: panel === 'maintenance',
+      selected: slug === 'maintenance',
     },
     {
       id: 5,
       label: 'Blacklist',
       path: '/settings/blacklist',
       disabled: false,
-      selected: panel === 'blacklist',
+      selected: slug === 'blacklist',
     },
   ];
 
   const renderPanel = useMemo(() => {
-    switch (panel) {
+    switch (slug) {
       case 'client':
         return <div>Client panel</div>;
 
@@ -75,38 +79,14 @@ const Settings = () => {
       default:
         return <div>Error view</div>;
     }
-  }, [panel]);
+  }, [slug]);
 
   return (
     <PageLayout>
       <ViewLayout breadcrumbs heading={{ title: 'Settings' }}>
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'row',
-            gap: '1rem',
-          }}
-        >
-          <Box sx={{ width: '250px' }}>
-            <List>
-              {menuItems.map((item) => (
-                <ListItem key={item.id}>
-                  <ListItemButton
-                    onClick={() => router.push(item.path)}
-                    disabled={item.disabled}
-                    selected={item.selected}
-                  >
-                    <ListItemContent>{item.label}</ListItemContent>
-                  </ListItemButton>
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-          <Box sx={{ flex: 1 }}>
-            <div>{renderPanel}</div>
-          </Box>
-        </Box>
+        <ContentWithSidebar sidebar={<VerticalMenu items={menuItems} />}>
+          {renderPanel}
+        </ContentWithSidebar>
       </ViewLayout>
     </PageLayout>
   );

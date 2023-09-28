@@ -1,17 +1,31 @@
 import React from 'react';
-import { Button } from '@mui/joy';
+import Link from 'next/link';
+import { Dropdown, MenuButton, Menu, MenuItem } from '@mui/joy';
 import { AccountCircle } from '@mui/icons-material';
 
 const HeaderUser = () => {
   return (
-    <Button
-      variant="soft"
-      color="neutral"
-      size="lg"
-      startDecorator={<AccountCircle />}
-    >
-      HeaderUser
-    </Button>
+    <Dropdown>
+      <MenuButton
+        variant="soft"
+        color="neutral"
+        size="lg"
+        startDecorator={<AccountCircle />}
+      >
+        HeaderUser
+      </MenuButton>
+      <Menu>
+        <MenuItem component={Link} href="/profile">
+          Profile
+        </MenuItem>
+        <MenuItem component={Link} href="/help">
+          Help
+        </MenuItem>
+        <MenuItem component={Link} href="/login?logout=true">
+          Log Out
+        </MenuItem>
+      </Menu>
+    </Dropdown>
   );
 };
 
